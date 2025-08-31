@@ -1,6 +1,6 @@
-﻿# LM2L
-(Luigi's Mansion 2L(like Tool, but with a stupid pun))
+﻿# Luigi's Second Mansion 2L (3DS)
 Janky program for extracting and parsing files found in Luigi's Mansion 2: Dark Moon
+Originally by hadashisora
 
 #### Usecases
 * Extract data/dict archive pair along with necessery decompression
