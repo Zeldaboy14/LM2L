@@ -1,5 +1,6 @@
 ﻿# Luigi's Second Mansion 2L (3DS)
-Janky program for extracting and parsing files found in Luigi's Mansion 2: Dark Moon
+Janky program for extracting and parsing files found in Luigi's Mansion 2: Dark Moon.
+
 Originally by hadashisora
 
 #### Usecases
