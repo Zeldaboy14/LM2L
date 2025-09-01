@@ -25,7 +25,7 @@ namespace LM2L
 
             //Print some useless stuff to CMD before starting the GUI
             Console.WriteLine("Luigi's Second Mansion 2L by CHEMI6DER/TheFearsomeDzeraora");
-            Console.WriteLine("Updates by Zeldaboy14 (c) 2025");
+            Console.WriteLine("Updates by Zeldaboy14");
             Console.WriteLine("-------------------------------------------------------");
             //Console.WriteLine($"Build Date: {buildDateTime}");
             var gui = new MainGui();
