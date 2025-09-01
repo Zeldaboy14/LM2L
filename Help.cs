@@ -16,5 +16,15 @@ namespace LM2L
         {
             InitializeComponent();
         }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Help_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

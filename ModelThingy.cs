@@ -10,6 +10,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace LM2L
 {
@@ -534,6 +536,7 @@ namespace LM2L
         /// <param name="file003path">Path to file003</param>
         public static void ParseFiles(string file000path, string file002path, string file003path)
         {
+            LM2L.Program.ParseFileZero(file000path);
             //Create lists and variables
             List<FileEntry> files = listFileContents(file000path);
             List<Texture> textures = new List<Texture>();
@@ -583,10 +586,17 @@ namespace LM2L
 
             uint groupCount = 0; //Yeah that's a bodge for file path...
 
-            //Parsing of the model data
             foreach (var group2 in groups)
             {
                 List<Mesh> meshes = new List<Mesh>();
+
+                //Parsing of the model data
+                if (group == null)
+                {
+                    Console.WriteLine("No model data found!");
+                    LM2L.Program.DealWithTextures(file002path, file003path, true, true, true, true, false);
+                    return;
+                }
 
                 //Read each mesh
                 for (int i = 0; i < group2.vtxPointers.Count; i++)
@@ -822,8 +832,9 @@ namespace LM2L
                 Console.WriteLine("Saving models");
                 string outPath = Path.GetDirectoryName(file000path) + "\\mdl_extract\\group_" + string.Format("{0:D2}\\", groupCount);
                 foreach (var mesh in finalMeshes) Mesh.WriteWavefrontObj(mesh, outPath);
-                groupCount++;
+                groupCount++;;
             }
+            LM2L.Program.DealWithTextures(file002path, file003path, true, false, false, false, false);
         }
 
         static Texture ReadTextureMeta(BinaryReader br, uint length, uint offset)

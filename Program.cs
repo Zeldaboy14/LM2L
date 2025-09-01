@@ -6,6 +6,9 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.Runtime.InteropServices;
 using System.IO.Compression;
+using System.Globalization;
+using System.Reflection;
+
 
 namespace LM2L
 {
@@ -13,12 +16,18 @@ namespace LM2L
     {
         static string output = "";
 
+        [STAThread]
         static void Main()
         {
+
+            // If added as content and copied to output directory:
+            // Read the file from the application's directory.
+
             //Print some useless stuff to CMD before starting the GUI
-            Console.WriteLine("Luigi's Mansion 2 tool by CHEMI6DER/TheFearsomeDzeraora");
-            Console.WriteLine("Usage: use the GUI, I didn't bother with the CLI this time");
+            Console.WriteLine("Luigi's Second Mansion 2L by CHEMI6DER/TheFearsomeDzeraora");
+            Console.WriteLine("Updates by Zeldaboy14 (c) 2025");
             Console.WriteLine("-------------------------------------------------------");
+            //Console.WriteLine($"Build Date: {buildDateTime}");
             var gui = new MainGui();
             Application.Run(gui);
         }
